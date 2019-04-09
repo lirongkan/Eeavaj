@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <script>
+        Array.prototype.getMax =function(){
+            var max= this[0];
+            for(var index =0;index<this.length;index++){
+                if(this[index]>max){
+                    max=this[index];
+                }
+            }
+            return max;
+        }
+        var arr =[033,2,"6",4,"5"];
+        var max = arr.getMax();
+        document.write(max);//33
+    </script>
+</head>
+<body>
+
+</body>
+</html>
