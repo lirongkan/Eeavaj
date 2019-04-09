@@ -16,6 +16,20 @@
         var arr =[033,2,"6",4,"5"];
         var max = arr.getMax();
         document.write(max);//33
+document.write("<hr>");
+        Array.prototype.searchEle = function(target){
+            for(var i = 0 ; i<this.length  ; i++){
+                if(this[i] ==target){
+                    return i;
+                }
+            }
+            return -1;
+        }
+    var arr1 =new Array("A","b","C");
+        var res =arr1.searchEle("b");
+        document.write(res);
+
+
     </script>
 </head>
 <body>
