@@ -1,0 +1,12 @@
+table tr td{
+    border: 1px solid black;
+    /* border-spacing:20px; !* 设置单元格的边框与表格的边框距离*!
+    table-layout:fixed;
+*/
+}
+table{
+    border-collapse: collapse;
+}
+tr:hover{
+    background-color:#06F;
+}
