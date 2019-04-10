@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+    <script>
+        function checkName() {
+            var inputNode = document.getElementById("userName");
+            var spanNode = document.getElementById("userId");
+            var content = inputNode.value;
+           // var reg = /^[a-z][\w]+@[a-z0-9]+(\.[a-z]{2,3}){1,2}$/i;
+            var reg = /^[a-z][a-z0-9]{5}$/i;
+            if (reg.test(content)) {
+                spanNode.innerHTML = "correct".fontcolor("#787878");
+                return true;
+            } else {
+                spanNode.innerHTML = "错误".fontcolor("red");
+
+                return false;
+            }
+        }
+        //检查邮箱
+        function checkEmail(){
+            var email = document.getElementById("email").value;
+            var spanNode = document.getElementById("emailspan");
+
+            //编写邮箱的正则       13456@qq.com  13456@qq.net  13456@qq.com.cn
+            var reg = /^[a-z0-9]\w+@[a-z0-9]+(\.[a-z]{2,3}){1,2}$/i;
+            if(reg.test(email)){
+                //符合规则
+                spanNode.innerHTML = "正确".fontcolor("green");
+                return true;
+            }else{
+                //不符合规则
+                spanNode.innerHTML = "错误".fontcolor("red");
+
+                return false;
+            }
+        }
+
+        function checkAll(){
+            var userName = checkName();
+            var email = checkEmail();
+            if(userName&&email){
+                return true;
+            }else{
+
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<form action="success.html" method="get" onsubmit="return checkAll()" > <!--如果表单提交时候触发的方法返回是false,那么该表单不允许提交，如果返回的是true允许提交 -->
+    <table border="1px" width="50%" align="center" cellspacing="0px" cellpadding="3px">
+        <tr>
+            <td width="25%">姓名:</td>
+            <td>
+                <input type="text" name="userName" id="userName" onblur="checkName()"/>
+                <span id="userId"></span>
+            </td>
+        </tr>
+        <tr>
+            <td >密码:</td><td>
+            <input type="password"  name="pwd" id="pwd" onblur="checkPass()"/>
+            <span id="passId"></span>
+        </td>
+        </tr>
+        <tr>
+            <td>确认密码:</td><td>
+            <input type="password" name="ensurepwd" id="ensurepwd" onblur="ensurepass()" />		                <span id="ensure"></span>
+        </td>
+        </tr>
+        <tr>
+            <td>邮箱</td><td>
+            <input type="text" name="email" id="email" onblur="checkEmail()"/>
+            <span id="emailspan"></span>
+
+        </td>
+        </tr>
+        <tr>
+            <td>性别</td><td>
+            <input type="radio" checked="ture" name="gender" id="male" value="male"/>
+            男
+            <input type="radio" name="gender" value="female"/>
+            女</td>
+        </tr>
+        <tr>
+            <td>爱好:</td><td>
+            <input type="checkbox"  name="like" />
+            eat
+            <input type="checkbox" name="like" />
+            sleep
+            <input type="checkbox" name="like"/>
+            play
+            <span id="hobbySpan"></span>
+        </td>
+        </tr>
+        <tr>
+            <td>城市</td><td>
+            <select name="city" id="city">
+                <option value=""> 请选择</option>
+                <option value="bj"> 北京 </option>
+                <option value="gz"> 广州 </option>
+                <option value="sh"> 上海 </option>
+            </select>
+
+        </td>
+        </tr>
+        <tr>
+            <td>自我介绍</td><td>
+            <textarea cols="15" rows="5"  name="myInfo" id="myInfo"></textarea></td>
+        </tr>
+        <tr align="center">
+            <td colspan="2"><!--提交按钮-->
+                <input type="submit"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

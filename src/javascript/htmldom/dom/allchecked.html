@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选</title>
+    <script>
+        function allchecked(allNode){
+            var itemNode =document.getElementsByName("item");
+           // var allNode =document.getElementsByName("all");
+            for(var i=0;i<itemNode.length;i++){
+                itemNode[i].checked =allNode.checked;
+            }
+        }
+        function sum() {
+            var sum = 0;
+            var itemNode = document.getElementsByName("item");
+            for (var a = 0; a < itemNode.length; a++) {
+                if (itemNode[a].checked) {
+                    //注意Node是数组
+                    sum += parseInt(itemNode[a].value);
+                }
+
+            }
+            var spanNode = document.getElementById("sumid");
+            spanNode.innerHTML = "&yen"+sum;
+        }
+
+    </script>
+</head>
+<body>
+<div>商品列表</div>
+<input type="checkbox" name="item" value="3000" />笔记本电脑3000元<br />
+<input type="checkbox" name="item" value="1800"  />笔记本电脑1800元<br />
+<input type="checkbox" name="item" value="300"  />笔记本电脑300元<br />
+<input type="checkbox" name="item" value="3000"  />笔记本电脑3000元<br />
+<input type="checkbox" name="item" value="3000"  />笔记本电脑3000元<br />
+<input type="checkbox" name="item" value="3000"  />笔记本电脑3000元<br />
+<input type="checkbox" name="all" onclick="allchecked(this)" /> 全选<br />
+<input type="button" value="总金额：" onclick="sum()"/><span id="sumid"></span>
+</body>
+</html>

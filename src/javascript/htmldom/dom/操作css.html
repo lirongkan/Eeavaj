@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作css</title>
+</head>
+
+<body>
+<span >23423</span>
+</body>
+</html>
+
+<script>
+    //从上向下开始解析，当运行js的时候，还没有span；
+    var spanNode = document.getElementsByTagName("span")[0];
+
+    spanNode.style.fontSize ="24px";
+    spanNode.style.textDecoration = "line-through";
+    spanNode.style.color="#900000";
+
+
+</script>

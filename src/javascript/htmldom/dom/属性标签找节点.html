@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //获取到的标签节点为对象或对象数组
+        function showText() {
+            var inputNode =document.getElementById("userName");
+            inputNode.value="设置好了文本";
+        }
+        function showImage() {
+            var imgNode = document.getElementsByTagName("img");
+            for(var i=0;i<imgNode.length;i++){
+                imgNode[i].src="1.jpg";
+                imgNode[i].height="100";
+                imgNode[i].width="100";
+            }
+        }
+        function showDiv(){
+            var divNode=document.getElementsByName("info");
+            for(var i =0;i<divNode.length;i++){
+                divNode[i].innerHTML="hahah";
+            }
+
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="userName" value="请输入用户名..." /><input type="button" onclick="showText()" value="设置文本"/>
+<hr/>
+
+<img src="" />
+<img src="" />
+<img src="" />
+<input type="button" onclick="showImage()" value="显示图片"/>
+<hr/>
+<div name="info"></div>
+<div name="info"></div>
+<div name="info"></div>
+<input type="button" onclick="showDiv()" value="设置div内容"/>
+
+</body>
+</html>
