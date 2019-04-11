@@ -18,7 +18,7 @@ public class Demo1 {
     public static void main(String[] args) throws Exception {
         SAXReader reader = new SAXReader();
         Document doc = reader.read(new File("src/xml/contact.xml"));
-        System.out.println(doc.getClass());
+        System.out.println(doc.getName());
 
         //设定为当前文件夹
         File directory = new File("");
@@ -34,10 +34,10 @@ public class Demo1 {
         }
 
 
-        String xpath = "//name";
+        String xpath = "//@id";
         List<Node> list = doc.selectNodes(xpath);
         for (Node node : list) {
-            System.out.println(node.getName());
+            System.out.println(node);
 
         }
 
